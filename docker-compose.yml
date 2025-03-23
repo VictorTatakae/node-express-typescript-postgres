@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:17.4-alpine3.21
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: vttk
+      POSTGRES_PASSWORD: 18765213
+      POSTGRES_DB: polls
+    volumes:
+      - polls_pg_data:/var/lib/postgresql/data
+
+volumes:
+  polls_pg_data:
